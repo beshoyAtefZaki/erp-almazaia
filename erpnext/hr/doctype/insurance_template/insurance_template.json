@@ -1,0 +1,69 @@
+{
+ "autoname": "naming_series:",
+ "creation": "2019-12-17 12:23:56.598043",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "component",
+  "present",
+  "naming_series"
+ ],
+ "fields": [
+  {
+   "fieldname": "component",
+   "fieldtype": "Table",
+   "label": "Component",
+   "options": "Salary Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "present",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Present",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Serial Number",
+   "options": "EMP-CON.-"
+  }
+ ],
+ "modified": "2019-12-17 15:06:11.480378",
+ "modified_by": "Administrator",
+ "module": "HR",
+ "name": "Insurance Template",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "title",
+ "track_changes": 1
+}

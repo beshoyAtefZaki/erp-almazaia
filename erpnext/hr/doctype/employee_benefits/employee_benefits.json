@@ -1,0 +1,161 @@
+{
+ "creation": "2019-11-21 10:57:43.948658",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "main_info_section",
+  "employee",
+  "employee_full_name",
+  "column_break_4",
+  "contract",
+  "contratc_duration",
+  "annual_vacations",
+  "section_break_8",
+  "cotract_start_date",
+  "data_7",
+  "plane_ticket",
+  "plane_ticket_type",
+  "get_end_of_service_reward",
+  "data_11",
+  "end_of_service_reward",
+  "benefits_values",
+  "total_benfefits",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Employee contract",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contratc_duration",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Contratc type",
+   "options": "Comprehensive\nBasic"
+  },
+  {
+   "default": "21",
+   "fieldname": "annual_vacations",
+   "fieldtype": "Int",
+   "label": "Annual Vacations",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_of_service_reward",
+   "fieldtype": "Float",
+   "label": "End of service reward"
+  },
+  {
+   "fieldname": "get_end_of_service_reward",
+   "fieldtype": "Button",
+   "label": "Get End of Service reward"
+  },
+  {
+   "fieldname": "data_7",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cotract_start_date",
+   "fieldtype": "Date",
+   "label": "Cotract start date"
+  },
+  {
+   "default": "0",
+   "fieldname": "plane_ticket",
+   "fieldtype": "Check",
+   "label": "Plane ticket"
+  },
+  {
+   "depends_on": "eval:doc.plane_ticket =='1'",
+   "fieldname": "plane_ticket_type",
+   "fieldtype": "Data",
+   "label": "Plane ticket type",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.plane_ticket =='1'",
+   "fieldname": "data_11",
+   "fieldtype": "Float",
+   "label": "Plane ticket  Value"
+  },
+  {
+   "fieldname": "benefits_values",
+   "fieldtype": "Float",
+   "label": "Benefits Values"
+  },
+  {
+   "fieldname": "total_benfefits",
+   "fieldtype": "Float",
+   "label": "Total Benfefits"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee benefits",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_info_section",
+   "fieldtype": "Section Break",
+   "label": "Main info"
+  },
+  {
+   "fieldname": "employee_full_name",
+   "fieldtype": "Data",
+   "label": "Employee Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2019-11-21 11:21:39.202071",
+ "modified_by": "Administrator",
+ "module": "HR",
+ "name": "Employee benefits",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
