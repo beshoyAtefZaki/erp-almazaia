@@ -99,13 +99,12 @@
    "fieldname": "payment_account",
    "fieldtype": "Link",
    "label": "Payment Account",
-   "options": "Account",
-   "reqd": 1
+   "options": "Account"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2019-12-22 11:04:27.714871",
+ "modified": "2019-12-22 12:29:57.538545",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Liquidation",
