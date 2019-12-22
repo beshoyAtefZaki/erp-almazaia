@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2019-12-22 10:45:42.666964",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "employee_start_date",
+  "employee_end_contract_date",
+  "employee_plane_ticket",
+  "employee_end_of_service_regarde",
+  "employee_receivables",
+  "approved",
+  "amended_from",
+  "payment_method",
+  "payment_account"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Name",
+   "options": "AQ-01-.YY.-.MM.-.DD.-",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_start_date",
+   "fieldtype": "Date",
+   "label": "Employee Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_end_contract_date",
+   "fieldtype": "Date",
+   "label": "Employee End Contract Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_plane_ticket",
+   "fieldtype": "Link",
+   "label": "Employee plane Ticket",
+   "options": "Plane Ticket"
+  },
+  {
+   "fieldname": "employee_end_of_service_regarde",
+   "fieldtype": "Currency",
+   "label": "Employee End of service regarde"
+  },
+  {
+   "fieldname": "employee_receivables",
+   "fieldtype": "Currency",
+   "label": "Employee Receivables",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approved",
+   "fieldtype": "Link",
+   "label": "Approved",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Liquidation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment method",
+   "options": "Cash\nBanck",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_account",
+   "fieldtype": "Link",
+   "label": "Payment Account",
+   "options": "Account",
+   "reqd": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2019-12-22 11:04:27.714871",
+ "modified_by": "Administrator",
+ "module": "HR",
+ "name": "Liquidation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
