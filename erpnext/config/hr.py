@@ -168,6 +168,11 @@ def get_data():
 				},
 				{
 					"type": "doctype",
+					"name": "Liquidation",
+					"onboard": 1,
+				},
+				{
+					"type": "doctype",
 					"name": "Payroll Period",
 				},
 				{
