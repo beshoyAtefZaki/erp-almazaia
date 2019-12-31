@@ -17,7 +17,7 @@ class Employeecontract(Document):
 	def validate_dates(self):
 		check = validate_contract_date(self.employee, self.contract_start_date)
 		earnings   = self.earnings
-		create_Liquidation(self.employee,earnings ,self.contract_start_date ,self.contratc_end_date,self.liquidation_type ,self.total_earnings ,self.employee_full_name)
+		create_Liquidation(self.employee,earnings ,self.contract_start_date ,self.contratc_end_date,self.liquidation_type ,self.total_earnings ,self.employee_full_name, self.yearly_vacation)
 
 		if not check :
 			frappe.throw(("You can not add tow contract to this active employee contract."))
@@ -37,7 +37,7 @@ class Employeecontract(Document):
 		frappe.db.commit()
 		frappe.msgprint("Cancelled")
 
-def create_Liquidation(employee ,earnings,start , end,type_l,total_earnings,full_name):
+def create_Liquidation(employee ,earnings,start , end,type_l,total_earnings,full_name ,yearly_vacation):
 	habit = 0
 	basic = 0
 	doc = frappe.new_doc("Liquidation")
@@ -46,7 +46,7 @@ def create_Liquidation(employee ,earnings,start , end,type_l,total_earnings,full
 	doc.employee_start_date = start
 	doc.employee_end_contract_date=end
 	if type_l == "Full":
-		doc.employee_receivables =(float(total_earnings)/11)*(21.0/30.0) * 11.00
+		doc.employee_receivables =(float(total_earnings)/11)*(float(yearly_vacation)/30.0) * 11.00
 	for i in earnings :
 		if i.salary_component == "Basic":
 			basic +=  float(i.amount)
@@ -55,9 +55,9 @@ def create_Liquidation(employee ,earnings,start , end,type_l,total_earnings,full
 		if i.salary_component == u"بدل سكن":
 			habit += float(i.amount)
 	if type_l == "Basic" :
-		doc.employee_receivables =(float(basic)/11)*(21.0/30.0) * 11.00
+		doc.employee_receivables =(float(basic)/11)*(float(yearly_vacation)/30.0) * 11.00
 	if type_l == "Basic + Housing allowance" :
-		doc.employee_receivables =((float(basic)+float(habit))/11)*(21.0/30.0) * 11.00
+		doc.employee_receivables =((float(basic)+float(habit))/11)*(float(yearly_vacation)/30.0) * 11.00
 	doc.insert()
 	doc.save()
 	frappe.db.commit()

@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "creation": "2013-08-02 13:45:23",
  "doctype": "DocType",
  "document_type": "Other",
@@ -10,6 +11,7 @@
   "emp_created_by",
   "leave_approval_notification_template",
   "leave_status_notification_template",
+  "calculate_on_month_days",
   "column_break_4",
   "stop_birthday_reminders",
   "maintain_bill_work_hours_same",
@@ -117,13 +119,19 @@
    "fieldname": "retirement_age_for_male",
    "fieldtype": "Data",
    "label": "Retirement Age"
+  },
+  {
+   "fieldname": "calculate_on_month_days",
+   "fieldtype": "Data",
+   "label": "calculate on month days"
   }
  ],
  "icon": "fa fa-cog",
  "idx": 1,
  "issingle": 1,
- "modified": "2019-10-14 00:22:36.053893",
- "modified_by": "m-i-m@live.com",
+ "links": [],
+ "modified": "2019-12-25 10:54:11.566378",
+ "modified_by": "Administrator",
  "module": "HR",
  "name": "HR Settings",
  "owner": "Administrator",
