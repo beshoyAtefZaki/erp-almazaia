@@ -40,9 +40,9 @@ def validate_contract_date(employee , start_date):
 	date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
 	# date = datetime.date.today()
 	grant_date    = datetime.datetime.today() + relativedelta(months =+ 2)
-	if date < grant_date :
-		frappe.msgprint("Unvalid Contract date !")
-		return False
+	#if date < grant_date :
+	#	frappe.msgprint("Unvalid Contract date !")
+	#	return False
 	res = frappe.db.sql('''
 	SELECT   contratc_end_date  FROM `tabEmployee contract` WHERE employee ='%s' and docstatus = 1
 	'''%employee, as_dict=1)
@@ -61,9 +61,9 @@ def get_contract_end_date(duration , start_date,  employee ):
 	end_date    = date + relativedelta(months =+ int(duration))
 	check_dates = validate_contract_date(employee , start_date)
 	if check_dates :
-		return(end_date.date() )
+	      return(end_date.date() )
 	else :
-		frappe.msgprint("You can not add tow contract to this active employee contract")
+	       frappe.msgprint("You can not add tow contract to this active employee contract")
 	return(end_date.date() )
 
 
